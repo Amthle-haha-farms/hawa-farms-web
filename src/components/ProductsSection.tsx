@@ -43,7 +43,7 @@ const ProductsSection = () => {
           </h2>
           <p className="text-xl text-brand-gray max-w-3xl mx-auto">
             Discover our carefully crafted selection of healthy, homemade drinks. 
-            Each bottle is made with love and the finest natural ingredients.
+            Each 35cl bottle is made with love and the finest natural ingredients.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ const ProductsSection = () => {
                   {product.name}
                 </CardTitle>
                 <div className="text-3xl font-bold text-brand-red">{product.price}</div>
-                <div className="text-sm text-brand-gray">per bottle</div>
+                <div className="text-sm text-brand-gray">per 35cl bottle</div>
               </CardHeader>
               
               <CardContent className="text-center">
