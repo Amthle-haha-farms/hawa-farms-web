@@ -8,12 +8,12 @@ const ContactSection = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+2348088632033';
+    window.location.href = 'tel:+2347039085311';
   };
 
   const handleWhatsAppClick = () => {
     const message = 'Hello AMTHLE Hawa Farms! I would like to place an order for your drinks.';
-    window.open(`https://wa.me/2348088632033?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/2347039085311?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
@@ -61,7 +61,7 @@ const ContactSection = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-white">Phone</h4>
-                        <p className="text-gray-300">08088632033</p>
+                        <p className="text-gray-300">07039085311</p>
                       </div>
                     </div>
                   </CardContent>

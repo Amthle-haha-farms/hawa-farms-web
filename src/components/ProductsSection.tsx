@@ -24,6 +24,13 @@ const ProductsSection = () => {
       description: "Invigorating ginger drink with a perfect balance of spice and sweetness. Known for its digestive benefits and natural healing properties.",
       features: ["Digestive Aid", "Anti-inflammatory", "Natural Healing", "Energy Boost"],
       color: "from-orange-500 to-yellow-500"
+    },
+    {
+      name: "Kunun Aya (Tigernut Drink)",
+      price: "₦600",
+      description: "Creamy and nutritious tigernut drink packed with natural goodness. Rich in fiber, healthy fats, and essential minerals for optimal health.",
+      features: ["High Fiber", "Healthy Fats", "Rich in Minerals", "Naturally Sweet"],
+      color: "from-amber-500 to-orange-600"
     }
   ];
 
@@ -40,7 +47,7 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {products.map((product, index) => (
             <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-2 border-gray-200 hover:border-brand-red">
               <CardHeader className="text-center pb-4">
