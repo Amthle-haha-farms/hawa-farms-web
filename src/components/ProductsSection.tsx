@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
@@ -19,7 +18,7 @@ const ProductsSection = () => {
     {
       id: "zobo",
       name: "Zobo Drink",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop",
+      image: null,
       description: "A refreshing blend of hibiscus leaves with natural spices and fruits. Rich in antioxidants and vitamin C, perfect for boosting your immune system.",
       features: ["100% Natural", "Rich in Antioxidants", "Immune Booster", "Refreshing Taste"],
       color: "from-red-500 to-red-600",
@@ -32,7 +31,7 @@ const ProductsSection = () => {
     {
       id: "ginger",
       name: "Ginger Drink",
-      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=300&fit=crop",
+      image: null,
       description: "Invigorating ginger drink with a perfect balance of spice and sweetness. Known for its digestive benefits and natural healing properties.",
       features: ["Digestive Aid", "Anti-inflammatory", "Natural Healing", "Energy Boost"],
       color: "from-orange-500 to-yellow-500",
@@ -128,21 +127,11 @@ const ProductsSection = () => {
           {products.map((product, index) => (
             <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-2 border-gray-200 hover:border-brand-red">
               <CardHeader className="text-center pb-4">
-                {product.image ? (
-                  <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ) : (
-                  <div className={`w-24 h-24 bg-gradient-to-r ${product.color} rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg`}>
-                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M5,2V8H3V9A4,4 0 0,0 7,13H9V21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V13H17A4,4 0 0,0 21,9V8H19V2H5M7,4H17V8H15V9A2,2 0 0,1 13,11H11A2,2 0 0,1 9,9V8H7V4Z"/>
-                    </svg>
-                  </div>
-                )}
+                <div className={`w-24 h-24 bg-gradient-to-r ${product.color} rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg`}>
+                  <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M5,2V8H3V9A4,4 0 0,0 7,13H9V21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V13H17A4,4 0 0,0 21,9V8H19V2H5M7,4H17V8H15V9A2,2 0 0,1 13,11H11A2,2 0 0,1 9,9V8H7V4Z"/>
+                  </svg>
+                </div>
                 <CardTitle className="text-2xl font-bold text-brand-black group-hover:text-brand-red transition-colors">
                   {product.name}
                 </CardTitle>
