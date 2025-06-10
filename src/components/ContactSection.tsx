@@ -1,8 +1,13 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useState } from 'react';
+import SpinWheel from './SpinWheel';
 
 const ContactSection = () => {
+  const [showSpinWheel, setShowSpinWheel] = useState(false);
+  const [customerOrderCount, setCustomerOrderCount] = useState(0);
+
   const handleEmailClick = () => {
     window.location.href = 'mailto:yusufayuaba@gmail.com?subject=Order Inquiry - AMTHLE Hawa Farms';
   };
@@ -14,6 +19,13 @@ const ContactSection = () => {
   const handleWhatsAppClick = () => {
     const message = 'Hello AMTHLE Hawa Farms! I would like to place an order for your drinks.';
     window.open(`https://wa.me/2347039085311?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
+  const handleLoyaltyCheckout = () => {
+    // Simulate customer with previous orders above 20
+    const totalOrders = Math.floor(Math.random() * 50) + 25; // Random between 25-75
+    setCustomerOrderCount(totalOrders);
+    setShowSpinWheel(true);
   };
 
   return (
@@ -133,6 +145,14 @@ const ContactSection = () => {
                     </svg>
                     Send Email
                   </Button>
+
+                  <Button 
+                    onClick={handleLoyaltyCheckout}
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 transform hover:scale-105"
+                    size="lg"
+                  >
+                    🎊 Loyal Customer Checkout (Spin Wheel!) 🎊
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -145,9 +165,22 @@ const ContactSection = () => {
                 <p>Sunday: Available for urgent orders</p>
               </div>
             </div>
+
+            <div className="bg-yellow-100 border border-yellow-400 rounded-xl p-4 text-center">
+              <h4 className="text-lg font-bold text-yellow-800 mb-2">🎁 Loyalty Rewards!</h4>
+              <p className="text-yellow-700 text-sm">
+                Order 20+ bottles and spin our wheel to win 1-5 free bottles!
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
+      <SpinWheel 
+        isOpen={showSpinWheel}
+        onClose={() => setShowSpinWheel(false)}
+        customerOrder={customerOrderCount}
+      />
     </section>
   );
 };
